@@ -46,6 +46,22 @@ folium.Choropleth(
 
 
 
+# Adding the Layer Control
+folium.LayerControl(collapsed = False).add_to(map)
+
+# Adding Mouse-Position Coordinates Support
+folium.plugins.MousePosition().add_to(map)
+
+# Adding Full-Screen Support
+folium.plugins.Fullscreen(
+        position = 'bottomright',
+        title = 'Full Screen',
+        title_cancel = 'Return',
+        force_separate_button = True
+).add_to(map)
+
+
+
 # Display the map by saving it as an html, then opening it with the browser
 map.save('lead_nhood.html')
 webbrowser.open('lead_nhood.html')

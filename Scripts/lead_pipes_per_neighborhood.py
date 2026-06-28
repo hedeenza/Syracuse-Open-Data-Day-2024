@@ -76,3 +76,13 @@ neighborhood_counts = lead_pipes.groupby(['Neighborhood']).size().to_frame(name 
 sorted_counts = neighborhood_counts.sort_values(['Count'], ascending = False).reset_index(drop = True)
 
 print(sorted_counts)
+
+# Ask user whether they want to save files to avoid unnecessary regeneration:
+# Save All Games Data Frame
+save_csv = str(input('Save combined games Data Frame? (y/n) ') or 'n')
+if save_csv == 'y':
+    file_name = str(input('File Name? ') or 'lead_pipe_count_by_neighborhood.csv')
+    sorted_counts.to_csv(file_name, index = False)
+    print(f'Sorted Counts Data Frame [ SAVED AS ] {file_name}')
+else: 
+    print('Sorted Counts Data Frame NOT saved')

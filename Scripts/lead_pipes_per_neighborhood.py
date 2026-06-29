@@ -9,8 +9,6 @@ from shapely.geometry import shape, GeometryCollection, Point
 # Reading in the GeoJSON file as a JSON file
 with open('../Data/Syracuse_Neighborhoods_2327829995554664018.geojson', 'r') as n:
     syr_nhood_json = json.load(n)
-with open('../Data/syracuse_zip_codes.geojson', 'r') as z:
-    syr_zip_json = json.load(z)
 
 
 

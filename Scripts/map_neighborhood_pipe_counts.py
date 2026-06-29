@@ -9,7 +9,7 @@ syr_nhood = gpd.read_file('../Data/Syracuse_Neighborhoods_2327829995554664018.ge
 # Converting the GeoJSON file to a JSON file
 syr_nhood_json = syr_nhood.to_json(drop_id = True)
 
-lead_pipes_by_neighborhood = pd.read_csv('lead_pipes_by_neighborhood.csv')
+lead_pipes_by_neighborhood = pd.read_csv('../Data/lead_pipes_by_neighborhood.csv')
 
 # Point the map to Syracuse
 map = folium.Map(
@@ -124,5 +124,5 @@ folium.plugins.Fullscreen(
 
 
 # Display the map by saving it as an html, then opening it with the browser
-map.save('map_lead_pipes_by_neighborhood.html')
-webbrowser.open('map_lead_pipes_by_neighborhood.html')
+map.save('../Maps/map_lead_pipes_by_neighborhood.html')
+webbrowser.open('../Maps/map_lead_pipes_by_neighborhood.html')
